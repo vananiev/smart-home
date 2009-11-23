@@ -1,0 +1,1 @@
+<a href="index.php?adr=unreg_user_act.php">ѕодтвердить удаление учетной записи</a>

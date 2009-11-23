@@ -1,0 +1,76 @@
+body {
+	font-family: Tahoma;
+	font-size: 12px;
+	text-align:center;
+}
+
+form, form *, div#ie6fix {
+  background-color:#F8F7F2;
+}
+
+div#ie6fix {
+  background-color:#F8F7F2;
+}
+
+input.text, input.file {
+  background: url(../images/bgin.gif) repeat-x;
+  width: 500px;
+  border: 1px inset #333;
+}
+
+textarea {
+  background: url(../images/bgta.gif) repeat-x;
+  width: 500px;
+  height: 70px;
+  border: 1px inset #333;
+}
+
+input.submit {
+  background-color: buttonface;
+  border: 1px inset #333;
+}
+
+#wrapper {
+	margin:0 auto;
+	text-align:left;
+	width:946px;
+	height:580px;
+}
+
+#wrapper_top {
+	background: url(../images/wrapper_top.jpg) bottom no-repeat;
+	height: 27px;
+}
+
+#wrapper_bottom {
+	background: url(../images/wrapper_bottom.jpg) bottom no-repeat;
+	height: 27px;
+}
+
+#wrapper_content {
+	background-color: #f8f7f2;
+	border-left: 1px #e2e3de solid;
+	border-right: 1px #e2e3de solid;
+	padding: 0px 143px 0px 141px;
+}
+
+#white_form_top {
+	background: url(images/white_form_top.jpg) bottom no-repeat;
+	height: 22px
+}
+
+#white_form_content {
+	padding: 0px 20px 0px 20px;
+	width: 619px;
+}
+
+#white_form_bottom {
+	background: url(../images/white_form_bottom.jpg) bottom no-repeat;
+	height: 22px
+}
+
+#footer a, #footer a:hover {
+color:#E51937;
+padding:0 5px;
+text-decoration: none;
+}

@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title></title>
+</head>
+
+<body>
+
+<p>Поддерживаемые команды:</p>
+<ul>
+	<li><b><span lang="en-us"><a name="to (на)"></a>to (</span>на<span lang="en-us">)</span></b> - 
+	перенаправление на компьютер локальной сети (см. Ответы на вопросы<span lang="en-us">-&gt;</span>Ваш 
+	компьютер подключен к Интернет через локальную сеть)<span lang="en-us">.</span></li>
+	<li><b><span lang="en-us">run (</span>запустить<span lang="en-us">)</span></b> - 
+	запустить файл или папку. Например<span lang="en-us">: run C:\ - </span>
+	запустит папку <span lang="en-us">C:\</span></li>
+	<li><b><span lang="en-us"><a name="shutdown (выключить)"></a>shutdown</span> (выключить)</b> - выключение компьютера</li>
+	<li><b><span lang="en-us">reboot (</span>перезагрузить)</b> -<span lang="en-us">
+	</span>перезагрузить компьютер</li>
+	<li><b><span lang="en-us">shut (</span>выйти<span lang="en-us">)</span></b> - 
+	завершение сеанса</li>
+	<li><b><span lang="en-us">msg (</span>сообщение<span lang="en-us">)</span></b> -<span lang="en-us">
+	</span>показывает сообщение. Например: <span lang="en-us">to comp key msg
+	</span>Привет<span lang="en-us"> - </span>выведет сообщение<span lang="en-us">
+	</span>Привет на локальном компьютере <span lang="en-us">comp</span>, где 
+	запущена программа-сервер с ключом <span lang="en-us">key</span>. </li>
+	<li><b><span lang="en-us"><a name="define (макроопределение)"></a>define (</span>макроопределение<span lang="en-us">)</span></b> 
+	- работа с макроопределениями. Например: <span lang="en-us">define del &quot;mac&quot; 
+	-</span> удаляет макроопределение <span lang="en-us">mac;&nbsp; define 
+	&quot;mac_2&quot; &quot;A B C D F&quot; - </span>добавит/заменит макроопределение
+	<span lang="en-us">mac_2</span>, которое будет заменяться командой
+	<span lang="en-us">(A) </span>с параметром этой команды <span lang="en-us">
+	(B C D F).;define &quot;mac_3&quot; &quot;&quot;A B C D&quot; F&quot; - </span>добавит/заменит 
+	макроопределение <span lang="en-us">mac_3</span>, которое будет заменяться 
+	командой <span lang="en-us">(A B C D) </span>с параметром этой команды
+	<span lang="en-us">(F). </span>Все аргументы функций берутся в кавычки.</li>
+	<li><b><span lang="en-us">stop (</span>остановить<span lang="en-us">)</span></b> - 
+	остановить программу-сервер</li>
+	<li><b><span lang="en-us">port (</span>порт)</b> - сменить прослушиваемый порт 
+	программно</li>
+	<li><b><span lang="en-us">cmd (</span>командная_строка<span lang="en-us">)</span></b> 
+	- поддержка любой команды из командной строки. Например: <span lang="en-us">
+	cmd netsh.exe wlan connect name=HOME - </span>включит беспроводную сеть
+	<span lang="en-us">HOME</span>.</li>
+	<li>выполнения любой команды, которая поддерживается в <i>Пуск-<span lang="en-us">&gt;</span>выполнить</i>. 
+	Например: <span lang="en-us">regedit c:\1.reg - </span>занесет в реестр 
+	данные из файла 1.<span lang="en-us">reg.</span></li>
+</ul>
+
+<p>&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p><font color="#FF0000">В скобках указаны команды в русском варианте 
+		(равнозначны английскому варианту).</font></p>
+	</blockquote>
+</blockquote>
+
+<?php include "sape_block.php"; ?>
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+
+<title>Статья: Работа с LPT под Win 2000, XP: самодельный драйвер Port.sys</title>
+<link rel="icon" href="http://pcports.ru/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://pcports.ru/favicon.ico" type="image/x-icon">
+<link href="4.php_files/styles.css" type="text/css" rel="stylesheet">
+<meta content="Сопряжение компьютеров с внешними устройствами" name="description">
+<meta content="сопряжение компьютеров с внешними устройствами, программирование порт lpt, программирование usb, com, создание usb устройств, программирование драйверов, простой драйвер, как написать драйвер, программирование микроконтролееров, драйвер usb, пример создания usb устройства, микроконтроллеры PIC, сопряжение пк с внешними устройствами, чтение из порта usb lpt com,  примеры программ для работы с портом usb lpt com, inpout32.dll, GiveIO.sys, обработка прерывание, схема цап ацп" name="keywords">
+<meta name="Document-state" content="Dynamic">
+<meta name="revizit-after" content="2 days">
+<meta name="robots" content="all">
+</head><body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+
+
+<table bgcolor="#0072bc" cellpadding="0" cellspacing="0" width="100%" height="50"><tbody><tr><td class="text" style="padding-left: 20px;"><font color="white">СОПРЯЖЕНИЕ КОМПЬЮТЕРОВ С ВНЕШНИМИ УСТРОЙСТВАМИ <a href="http://www.pcports.ru/"><font color="white"></font></a></font></td></tr>
+</tbody></table>
+
+<div style="width: 800px;">
+
+<table width="100%">
+<tbody><tr><td width="150" valign="top">
+
+<a href="http://www.pcports.ru/">
+<img src="4.php_files/tehno5.gif" border="0"></a>
+
+
+
+
+<a href="http://www.pcports.ru/Articles.php">
+<img src="4.php_files/list.gif" border="0"></a>
+
+
+<a href="http://www.pcports.ru/Developing.php">
+<img src="4.php_files/tehno2.gif" border="0"></a>
+
+<a href="http://www.pcports.ru/Library.php">
+<img src="4.php_files/lib.gif" border="0"></a>
+
+
+<a href="http://www.pcports.ru/Contacts.php">
+<img src="4.php_files/tehno6.gif" border="0"></a>
+<br>
+
+
+
+
+
+<a href="http://www.yandex.ru/cy?base=0&amp;host=www.pcports.ru"> <img src="4.php_files/cycounter.gif" alt="Яндекс цитирования" border="0" width="88" height="31"> </a> 
+
+<!-- HotLog -->
+
+<script type="text/javascript" language="javascript">
+hotlog_js="1.0";
+hotlog_r=""+Math.random()+"&s=356042&im=212&r="+escape(document.referrer)+"&pg="+
+escape(window.location.href);
+document.cookie="hotlog=1; path=/"; hotlog_r+="&c="+(document.cookie?"Y":"N");
+</script>
+<script type="text/javascript" language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")
+</script>
+<script type="text/javascript" language="javascript1.2">
+hotlog_js="1.2";
+hotlog_r+="&wh="+screen.width+'x'+screen.height+"&px="+
+(((navigator.appName.substring(0,3)=="Mic"))?
+screen.colorDepth:screen.pixelDepth)</script>
+<script type="text/javascript" language="javascript1.3">hotlog_js="1.3"</script>
+<script type="text/javascript" language="javascript">hotlog_r+="&js="+hotlog_js;
+document.write("<a href='http://click.hotlog.ru/?356042' target='_top'><img "+
+" src='http://hit16.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&' border=0 width=88 height=100 alt=HotLog><\/a>")
+</script><a href="http://click.hotlog.ru/?356042" target="_top"><img src="4.php_files/count.gif" alt="HotLog" border="0" width="88" height="100"></a>
+<noscript>
+<a href="http://click.hotlog.ru/?356042" target="_top"><img
+src="http://hit16.hotlog.ru/cgi-bin/hotlog/count?s=356042&amp;im=212"
+border=0 width=88 height=100 alt="HotLog"></a>
+</noscript>
+
+<!-- /HotLog -->
+
+
+<br><br>
+<table>
+<tbody><tr><td>
+<p class="textb"><b>Друзья ресурса:</b></p>
+</td></tr>
+
+<tr><td>
+<p class="textb"><a href="http://www.roboforum.ru/" class="bl" target="_new">www.roboforum.ru</a></p>
+</td></tr>
+</tbody></table>
+
+
+
+
+<br>
+
+</td><td style="padding-left: 20px;" valign="top">
+<br>
+<h3 align="center">Работа с LPT под Win 2000, XP: самодельный драйвер Port.sys </h3>
+
+<p class="textb" align="justify">Продолжая цикл статей по тематике
+борьбы с Windows при управлении портами не могу не рассказать о еще
+одном крайне интересном инструменте: <b>драйвер</b> - обычный драйвер под NT, который можно написать и самому.</p>
+
+<p class="textb" align="justify">Однажды я решил, что не плохо бы
+написать собственный драйвер для управления портами. Я знал что это
+будет непросто и не ошибся: ломал голову несколько месяцев, прежде чем
+скомпилировал и оттестировал рабочий вариант драйвера для портов.
+Несмотря на трудности написания драйвера, он дает максимальные
+возможности по работе с аппаратным железом компьютера.</p>
+
+<p class="textb" align="justify">В качестве примера в этой статье, я
+предлагаю простенький драйвер позволяющий читать и писать в порт. Его
+функциональные возможности ни чем не отличаются от библиотеки
+inpout32.dll и в конечном счете от GiveIO.sys, но при желании,
+возможности этого драйвера можно значительно расширить, введя
+обработчик прерывания и многое др.</p>
+
+
+<br>
+<p class="textb" align="center"><b>Пример использования Port.sys</b></p>
+
+<p class="textb" align="justify">Для начала скачайте архив с драйвером и библиотекой: <a href="http://www.pcports.ru/files/port.rar" class="bl">port.rar</a> (9 Kb)</p>
+
+<p class="textb" align="justify">Этот драйвер предварительно
+прописавать в реестре не надо - он используется как динамически
+загружаемый, т.е. достаточно разместить его в одной директории с самой
+программой.</p>
+
+<p class="textb" align="justify">Итак, создаем пустой проект консольного приложения в VS++, создаем пустой файл *.cpp и копируем туда ниже следующий код:</p>
+
+<pre class="code">#include "iostream.h"
+#include "conio.h"
+#include "stdlib.h"
+#include "windows.h"
+#include "h.h"
+
+extern HANDLE hDrv;
+
+int main()
+{
+	int Address=888;
+	cout&lt;&lt;"-----------Test LPT port with Port.sys-------------"&lt;&lt;endl;
+	cout&lt;&lt;" "&lt;&lt;endl;
+	
+	bool status=InstallDriverWithSCManager();
+	if (status==false)
+	{
+		cout&lt;&lt;"Error! Can't open driver! Press any key to exit... "&lt;&lt;endl;
+		getch();
+		return false;
+	}
+	
+	cout&lt;&lt;"Press '1' to activate and '0' to disactivate lightdiod."&lt;&lt;endl;
+	cout&lt;&lt;"To exit press 'e'."&lt;&lt;endl;
+	cout&lt;&lt;" "&lt;&lt;endl;
+
+	while(1)
+	{		
+		switch(getch())
+		{
+
+			case '0':	cout&lt;&lt;"Disactivate...."&lt;&lt;endl;
+						WriteToPort(Address, 0);
+						break;	 
+						
+			case '1': 	cout&lt;&lt;"Activate...."&lt;&lt;endl;
+						WriteToPort(Address, 1);
+						break;
+
+			case 'e':	cout&lt;&lt;" Press any key to exit..."&lt;&lt;endl;
+						getch();
+					        StopDriver();
+						return true;
+						break;
+		}
+	}   
+}
+</pre>
+
+<p class="textb" align="justify">Теперь копируем в папку пректа файлы <b>PortLib.lib</b> и <b>h.h</b>. Подсоединяем их к проекту выбором пункта меню <b>Project -&gt; Add to Project -&gt; Files...</b>. Далее копируем файл драйвера <b>Port.sys</b> в папку, где находится откомпилированная программа (папка Debug или Relase, смотря в каком режиме компилируете). </p>
+
+
+
+<table>
+<tbody><tr><td><img src="4.php_files/1.gif" alt="программирование порта lpt, программирование драйверов, создание простого драйвера, пример драйвера, как написать драйвер, драйвера NT, драйвер GiveIO.sys" border="0"></td><td style="padding-left: 10px;"><p class="textb" align="justify">
+Обращаю Ваше внимание на то, что файл программы и драйвер должны быть
+вместе (в одной папке), иначе один без другого ни чего не сможет
+сделать. </p></td></tr></tbody></table>
+
+
+
+<p class="textb" align="justify">Наконец, проводим компиляцию нашего проекта и запускаем программу. Если все в порядке, нажатием клавиш 1 и 0 мигаем светодиодом.</p>
+<img src="4.php_files/2.gif">
+
+
+
+
+<br>
+<br>
+</td></tr></tbody></table>
+
+</div>
+
+
+
+<br>
+
+<table style="padding-left: 20px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr><td colspan="5" class="text1" align="left">
+<a href="http://www.pcports.ru/Contacts.php" class="bl">Контакты</a>
+</td>
+
+<td colspan="5" class="text1" align="left">
+|
+</td>
+
+<td colspan="5" class="text1" align="left">
+<a href="http://www.pcports.ru/GBooks.php" class="bl">Гостевая книга</a>
+</td>
+
+
+<td colspan="5" class="text1" align="left">
+|
+</td>
+
+<td colspan="5" class="text1" align="left">
+<a href="http://www.pcports.ru/vac.php" class="bl">Вакансии</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<table style="padding-left: 20px;" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody>
+<tr><td colspan="15" class="text" align="left">
+© 2005-2009 сопряжение компьютеров с внешними устройствами PCPORTS.RU © Иванов Д.В. 
+</td></tr>
+<tr><td colspan="15" class="text" align="left">
+
+</td></tr>
+</tbody>
+</table>
+<br>
+
+</body></html>

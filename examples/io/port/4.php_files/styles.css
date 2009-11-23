@@ -1,0 +1,87 @@
+A:link {TEXT-DECORATION: none; color: #708770}A:visited {TEXT-DECORATION: none; color: #708770}
+A:hover {COLOR:  rgb(0,153,0); TEXT-DECORATION: underline}
+A:active {color: rgb(0,153,0);  TEXT-DECORATION: none}
+A.bl:link {TEXT-DECORATION: none; color: #00549A}
+A.bl:visited {TEXT-DECORATION: none; color: #00549A}
+A.bl:hover {COLOR:  rgb(0,153,0); TEXT-DECORATION: underline}
+A.bl:active {color: rgb(0,153,0);  TEXT-DECORATION: none}
+
+A.blu:link {TEXT-DECORATION: underline; color: #00549A}
+A.blu:visited {TEXT-DECORATION: underline; color: #00549A}
+A.blu:hover {COLOR:  rgb(0,153,0); TEXT-DECORATION: none}
+A.blu:active {color: rgb(0,153,0);  TEXT-DECORATION: none}
+
+
+A.nav:link {TEXT-DECORATION: none; color: rgb(102,102,102)}
+A.nav:visited {TEXT-DECORATION: none; color: rgb(102,102,102)}
+A.nav:hover {COLOR:  rgb(0,153,0); TEXT-DECORATION: underline}
+A.nav:active {color: rgb(0,153,0);  TEXT-DECORATION: none}
+A.gr:link {TEXT-DECORATION: none; color: #595959}
+A.gr:visited {TEXT-DECORATION: none; color: #595959}
+A.gr:hover {COLOR:  rgb(0,153,0); TEXT-DECORATION: underline}
+A.gr:active {color: rgb(0,153,0);  TEXT-DECORATION: none}
+A.w:link {TEXT-DECORATION: none; color: white}
+A.w:visited {TEXT-DECORATION: none; color: white}
+A.w:hover {COLOR:  rgb(0,153,0); TEXT-DECORATION: underline}
+A.w:active {color: rgb(0,153,0);  TEXT-DECORATION: none}
+.HAND {cursor: hand; font-family:Verdana; font-size: 17; color: white; font-weight: bold; TEXT-DECORATION: none}
+.HAND1 {cursor: hand; font-family:Verdana; font-size: 15; color: black; font-weight: bold}
+.big {font-family:Verdana; font-size: 15; color: #024EA2; ; font-weight: bold}
+.text1 {font-family:Verdana; font-size: 11; color: rgb(102,102,102); }
+.textb {font-family:Verdana; font-size: 11; color: black }
+.text2 {font-family:Verdana; font-size: 13; color: rgb(102,102,102); }
+.text {font-family: Verdana; font-size: 10; color: rgb(102,102,102)}       
+.small {font-family:Verdana; font-size: 10; color: black; }
+.MAIN {font-family: Verdana; font-size: 21; font-weight: bold} 
+.menu {background-color: #F1CD1D; height: 15; border-color: black; border-width: 1; border-style: solid; font-family: Arial; font-size: 18; color: black; font-weight: bold; align: center; padding-left: 10; padding-right: 10} 
+.tovar {border-style: solid; border-color: silver; border-width: 1}
+.tab0 {background-color:  #F1CD1D; height: 30; font-family: Verdana; font-size: 12px; padding: 5; text-align: center}
+.tab2 {background-color:  white; height: 150; font-family: Verdana; font-size: 12px; padding: 0; text-align: center}
+.c {border: 1px solid #CCCCCC; cursor: hand; width: 15; height: 15}.c2 {border: 1px solid #CCCCCC; cursor: hand; width: 20; height: 20}
+.page {background-color:  white; font-family: Verdana; font-size: 10px;}
+.index_page {background-color:  gray; font-family: Verdana; font-size: 10px; color: white}.tab3 {background-color:  #0AB24B; height: 30; font-family: Verdana; font-size: 9px; padding: 5}
+.tab4 {background-color:  white; height: 30; font-family: Verdana; font-size: 9px; padding: 5}
+.box {	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #666666; LINE-HEIGHT: 13px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+.Dot {PADDING-RIGHT: 17px; PADDING-LEFT: 17px;  LINE-HEIGHT: 10px; TEXT-ALIGN: center; font-family: Verdana; font-size: 13; color: rgb(102,102,102)}
+.colltab_left {border-right-style: solid; border-right-color: silver; border-right-width: 1; border-top-style: solid; border-top-color: silver; border-top-width: 1;}
+.colltab_right {border-top-style: solid; border-top-color: silver; border-top-width: 1;}
+.footerItem {	BORDER-RIGHT: #A3C5A4 0px solid; BORDER-TOP: #A3C5A4 1px solid; FONT-SIZE: 10px; BORDER-LEFT: #A3C5A4 0px solid; BORDER-BOTTOM: #A3C5A4 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #E1EDDB; TEXT-ALIGN: center; TEXT-DECORATION: none}
+
+.code {font-family:Courier New, Courier, mono; font-size: 14; color: green; }
+.codeBL {font-family:Courier New, Courier, mono; font-size: 14; color: gray; }
+.main {font-family: Times New Roman; font-size: 18; color: black; font-weight: bold}
+.main2 {font-family: Times New Roman; font-size: 16; color: black; font-weight: bold}
+.tabl {font-family:Verdana; font-size: 11; color: black; text-align: left; background-color: white; height: 40}
+.tabls {font-family:Verdana; font-size: 11; color: black; text-align: center; background-color: white; height: 40}
+
+.textBl {font-family:Verdana; font-size: 13; color: black }
+.leb {font-size:100%; line-height:130%; margin-bottom:0.5em; margin-top:0; text-indent:0em;}
+h3.title {font-size:120%; margin-bottom:0.2em; margin-top:0.1em;}
+
+.txt {FONT-SIZE: 14px; TEXT-INDENT: 0em; FONT-FAMILY: Times New Roman; TEXT-ALIGN: justify} 
+
+pre {
+	COLOR: black; font-family: Courier; font-size: 14;
+}
+pre i {
+	COLOR: green; FONT-STYLE: normal;
+}
+pre s {
+	COLOR: black; FONT-STYLE: normal; font-weight: bold; ; TEXT-DECORATION: none;
+}
+pre b {
+	COLOR: blue; FONT-STYLE: normal; font-weight: normal;
+}
+pre u {
+	COLOR: silver; FONT-STYLE: normal; font-weight: normal; TEXT-DECORATION: none;
+}
+pre var {
+	COLOR: #000080; FONT-STYLE: normal; font-weight: normal; TEXT-DECORATION: none;
+}
+pre em {
+	COLOR: #2b91af; FONT-STYLE: normal; font-weight: normal; TEXT-DECORATION: none;
+}
+pre tt {
+	COLOR: #a31515; FONT-STYLE: normal; font-weight: normal; TEXT-DECORATION: none;
+	
+}

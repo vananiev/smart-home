@@ -1,0 +1,6 @@
+<Limit GET POST>
+	require valid-user
+</Limit>
+AuthType Basic
+AuthName "/www/cmd.my-data.ru/admin"
+AuthUserFile /var/www/user1719/data/etc/149685116.passwd

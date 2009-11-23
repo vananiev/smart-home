@@ -1,0 +1,38 @@
+config.cpp		окно настройки программы
+config.ddp		-//-
+config.dfm		-//-
+config.h
+GetIP.cpp		окно настройки соединения
+GetIP.ddt		-//-
+GetIP.dfm		-//-
+GetIP.h			-//-
+head.h			общедоступные переменные программы
+kernel.h		вычислительное ядро
+Login.cpp		стартовое окно ввода логина и ключа
+Login.ddp		-//-
+Login.dfm		-//-
+Login.h			-//-
+main.cpp		главное окно программы
+main.ddp		-//-
+main.dfm		-//-
+main.h			-//-
+Msg.cpp			окно вывода сообщений			
+Msg.dfm			-//-
+Msg.h			-//-
+Server.bpr		главный файл проекта
+Server.cpp		-//-
+Server.res		-//-
+
+c++\			директория для компилятора с++
+command\		директория команд-программ
+config\			настройка программы
+config\ip.cnf		ip-адресса компьютерам, которым разрешен доступ, при включенном ip-фильтре
+config\compilers.cnf 	настройки компиляторов
+config\word.cnf		макроопределения
+help\			помощь
+help\ReadMe.txt		информация о программе
+help\File_descriptions.txt	список и описание файлов
+temp\			папка для времменных файлов
+temp\temp.bat		используется для запуска программ 
+
+

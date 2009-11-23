@@ -1,0 +1,2 @@
+wifi
+netsh.exe wlan connect name
